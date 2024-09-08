@@ -1,19 +1,19 @@
-SRCS =	ft_printf.c ft_put.c ft_puthexa.c
+SRCS =	ft_check.c
 CC =	cc -Wall -Werror -Wextra
 DIRLIB = ./libft
 INCLUDE = ./include
-NAME =	libftprintf.a
+NAME =	pswap.a
 OBJS =	$(SRCS:.c=.o)
 
-all : $(NAME) #EXEC
+all : $(NAME) EXEC
 
 $(NAME): $(OBJS)
 	make -C $(DIRLIB)
 	cp $(DIRLIB)/libft.a $(NAME)
 	ar -rc $(NAME) $(OBJS)
 
-#EXEC : main.c
-#	$(CC) main.c $(NAME)
+EXEC : push_swap.c
+	$(CC) push_swap.c $(NAME)
 
 %.o : %.c
 	$(CC) -c $(SRCS) 
@@ -21,7 +21,7 @@ $(NAME): $(OBJS)
 
 
 clean :
-	make clean -C $(DIRLIB)
+	make fclean -C $(DIRLIB)
 	rm -f $(OBJS)
 
 

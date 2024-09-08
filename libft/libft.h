@@ -6,7 +6,7 @@
 /*   By: nkalkoul <nkalkoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/21 21:15:45 by nkalkoul          #+#    #+#             */
-/*   Updated: 2024/06/11 15:10:48 by nkalkoul         ###   ########.fr       */
+/*   Updated: 2024/09/08 15:26:19 by nkalkoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
-int		ft_atoi(const char *s1);
+long	ft_atoi(const char *s1);
 void	ft_bzero(void *s, size_t n);
 size_t	ft_strlen(const char *s);
 size_t	ft_strlcat(char *dest, const char *src, size_t n);

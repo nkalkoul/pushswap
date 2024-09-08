@@ -1,38 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nkalkoul <nkalkoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/02 02:10:26 by nas91             #+#    #+#             */
-/*   Updated: 2024/09/08 14:06:51 by nkalkoul         ###   ########.fr       */
+/*   Created: 2024/09/08 13:59:38 by nkalkoul          #+#    #+#             */
+/*   Updated: 2024/09/08 18:35:08 by nkalkoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "push_swap.h"
 
-long	ft_atoi(const char *s1)
+int	main(int ac, char **av)
 {
-	long	i;
-	long	nbr;
-	long	sign;
+	int	i;
 
-	sign = 1;
 	i = 0;
-	nbr = 0;
-	while (((s1[i] >= 9 && s1[i] <= 13) || s1[i] == 32) && s1[i])
-		i++;
-	if (s1[i] == '-' || s1[i] == '+')
-	{
-		if (s1[i] == '-')
-			sign = -1;
-		i++;
-	}
-	while (s1[i] && ft_isdigit(s1[i]) == 1)
-	{
-		nbr = 10 * nbr + (s1[i] - 48);
-		i++;
-	}
-	return (nbr * sign);
+	if (ac < 2)
+		return (write(1, "error", 5));
+	if (ft_check(av) == 0)
+		return (write(1, "trie mtn", 21));
+	return (0);
 }
