@@ -1,29 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_push.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nkalkoul <nkalkoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/08 13:17:16 by nkalkoul          #+#    #+#             */
-/*   Updated: 2024/09/17 20:39:24 by nkalkoul         ###   ########.fr       */
+/*   Created: 2024/09/17 13:17:34 by nkalkoul          #+#    #+#             */
+/*   Updated: 2024/09/17 20:39:02 by nkalkoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSHSWAP_H
-# define PUSHSWAP_H
+#include "push_swap.h"
 
-#include "libft/libft.h"
-
-typedef struct s_pile s_pile;
-struct s_pile
+void	swap(s_pile *pl)
 {
-	int				content;
-	int				index;
-	s_pile	*next;
-};
+	int	temp;
 
-void	swap(s_pile *pl);
-size_t	ft_check(char **av);
-
-#endif
+	if (pl == NULL)
+		return;
+	temp = pl -> content;
+	pl -> content = pl -> next -> content;
+	pl -> next -> content = temp;	
+}
