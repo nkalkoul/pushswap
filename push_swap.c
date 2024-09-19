@@ -14,12 +14,14 @@
 
 int	main(int ac, char **av)
 {
-	int	i;
+	int		i;
+	int		*tab;
 
 	i = 0;
 	if (ac < 2)
 		return (write(1, "error", 5));
-	if (ft_check(av) == 0)
-		return (write(1, "trie mtn", 21));
+	if (ft_check(av) == 1)
+		return (write(1, "error", 5));
+	tab = ft_create_tabs(ac - 1, av + 1);
 	return (0);
 }

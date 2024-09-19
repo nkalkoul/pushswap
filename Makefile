@@ -1,4 +1,4 @@
-SRCS =	ft_check.c
+SRCS =	ft_check.c ft_create.c ft_push.c
 CC =	cc -Wall -Werror -Wextra
 DIRLIB = ./libft
 INCLUDE = ./include

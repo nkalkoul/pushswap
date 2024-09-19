@@ -15,15 +15,14 @@
 
 #include "libft/libft.h"
 
-typedef struct s_pile s_pile;
-struct s_pile
+typedef struct s_pile
 {
 	int				content;
 	int				index;
-	s_pile	*next;
-};
+	struct s_pile	*next;
+}					s_pile;
 
-void	swap(s_pile *pl);
+void	ft_swap(s_pile *pl);
 size_t	ft_check(char **av);
-
+int		*ft_create_tabs(int ac, char **av);
 #endif

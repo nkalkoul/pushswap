@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-void	swap(s_pile *pl)
+void	ft_swap(s_pile *pl)
 {
 	int	temp;
 

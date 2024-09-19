@@ -52,11 +52,11 @@ size_t	ft_check(char **av)
 	{
 		nbr = ft_atoi(av[i]);
 		if (nbr < -2147483648 || nbr > 2147483647)
-			return (write(2, "error", 5));
+			return (1);
 		if (ft_check_cara(av[i]) == 1)
-			return (write(2, "error", 5));
+			return (1);
 		if (ft_check_double(av, i, nbr) == 1)
-			return (write(2, "error", 5));
+			return (1);
 		i++;
 	}
 	return (0);
