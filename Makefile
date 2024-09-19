@@ -1,31 +1,34 @@
-SRCS =	ft_check.c ft_create.c ft_push.c
+SRCS =	ft_check.c ft_create.c ft_push.c push_swap.c
 CC =	cc -Wall -Werror -Wextra
 DIRLIB = ./libft
+LIBFT = $(DIRLIB)/libft.a
 INCLUDE = ./include
-NAME =	pswap.a
+NAME =	push_swap
 OBJS =	$(SRCS:.c=.o)
 
-all : $(NAME) EXEC
+all : $(NAME)
 
-$(NAME): $(OBJS)
-	make -C $(DIRLIB)
-	cp $(DIRLIB)/libft.a $(NAME)
-	ar -rc $(NAME) $(OBJS)
+$(NAME): $(LIBFT) $(OBJS)
+	@$(CC) $(OBJS) $(LIBFT) -o $(NAME)
+	@echo "push_swap done !"
+#	cp $(LIBFT)/libft.a $(NAME)
 
 EXEC : push_swap.c
-	$(CC) push_swap.c $(NAME)
+	@$(CC) push_swap.c $(NAME)
+
+$(LIBFT) :
+	@make -sC $(DIRLIB)
 
 %.o : %.c
-	$(CC) -c $(SRCS) 
-
-
+	@$(CC) -c $< -o $@
+	@echo "compiling: $<"
 
 clean :
-	make fclean -C $(DIRLIB)
-	rm -f $(OBJS)
+	@make fclean -sC $(DIRLIB)
+	@rm -f $(OBJS)
 
 
 fclean : clean
-	rm -f $(NAME) a.out
+	@rm -f $(NAME) a.out
 
 re : fclean all
