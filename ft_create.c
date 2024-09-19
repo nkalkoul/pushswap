@@ -6,7 +6,7 @@
 /*   By: nkalkoul <nkalkoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/17 20:40:05 by nkalkoul          #+#    #+#             */
-/*   Updated: 2024/09/19 16:31:33 by nkalkoul         ###   ########.fr       */
+/*   Updated: 2024/09/19 19:44:57 by nkalkoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,6 @@ s_pile	*ft_add_pile(s_pile *stack, int x)
 		return (NULL);
 	new -> content = x;
 	new -> next = stack;
-	printf(".\n");
 	return (new);
 }
 

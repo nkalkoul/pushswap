@@ -28,6 +28,7 @@ $(NAME): $(OBJS)
 
 %.o : %.c
 	$(CC) -c $(SRCS) $(FBONUS)
+	echo compiling: $(SRCS) $(FBONUS)
 
 bonus : $(OBJBONUS)
 	ar -rsc $(NAME) $(OBJBONUS)

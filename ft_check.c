@@ -6,7 +6,7 @@
 /*   By: nkalkoul <nkalkoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/08 14:03:05 by nkalkoul          #+#    #+#             */
-/*   Updated: 2024/09/08 18:52:13 by nkalkoul         ###   ########.fr       */
+/*   Updated: 2024/09/19 19:40:41 by nkalkoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,8 @@ size_t	ft_check(char **av)
 
 	while (av[i])
 	{
+		if (av[i][0] == 0)
+			return (1);
 		nbr = ft_atoi(av[i]);
 		if (nbr < -2147483648 || nbr > 2147483647)
 			return (1);
