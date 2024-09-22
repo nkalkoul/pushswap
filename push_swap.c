@@ -6,7 +6,7 @@
 /*   By: nkalkoul <nkalkoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/08 13:59:38 by nkalkoul          #+#    #+#             */
-/*   Updated: 2024/09/19 16:31:00 by nkalkoul         ###   ########.fr       */
+/*   Updated: 2024/09/21 16:14:36 by nkalkoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,5 +39,9 @@ int	main(int ac, char **av)
 	a = NULL;
 	a = ft_create_pile(a, tab, ac - 1);
 	ft_chouf(a);
+	write(1, "\n", 1);
+	ft_swap(a);
+	ft_chouf(a);
+	ft_free_pile(a);
 	return (0);
 }

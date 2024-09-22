@@ -6,7 +6,7 @@
 /*   By: nkalkoul <nkalkoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/17 20:40:05 by nkalkoul          #+#    #+#             */
-/*   Updated: 2024/09/19 19:44:57 by nkalkoul         ###   ########.fr       */
+/*   Updated: 2024/09/21 16:15:50 by nkalkoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,22 @@ s_pile	*ft_create_pile(s_pile *stack, int *tab, int ac)
 	while (i < ac)
 	{
 		stack = ft_add_pile(stack, tab[i]);
+		if (stack == NULL)
+			return(free(tab), ft_free_pile(stack), NULL);
 		i++;
 	}
-	return (stack);
+	return (free(tab), stack);
+}
+
+void	ft_free_pile(s_pile *pl)
+{
+	s_pile	*temp;
+
+	while(pl != NULL)
+	{
+		temp = pl -> next;
+		free(pl);
+		pl = temp;
+	}
+	pl = NULL;
 }

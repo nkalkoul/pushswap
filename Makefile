@@ -9,12 +9,12 @@ OBJS =	$(SRCS:.c=.o)
 all : $(NAME)
 
 $(NAME): $(LIBFT) $(OBJS)
-	@$(CC) $(OBJS) $(LIBFT) -o $(NAME)
+	@$(CC) $(OBJS) $(LIBFT) -o $(NAME) 
 	@echo "push_swap done !"
 #	cp $(LIBFT)/libft.a $(NAME)
 
 EXEC : push_swap.c
-	@$(CC) push_swap.c $(NAME)
+	@$(CC) push_swap.c $(NAME) -g3
 
 $(LIBFT) :
 	@make -sC $(DIRLIB)

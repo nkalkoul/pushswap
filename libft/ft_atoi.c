@@ -6,7 +6,7 @@
 /*   By: nkalkoul <nkalkoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/02 02:10:26 by nas91             #+#    #+#             */
-/*   Updated: 2024/09/19 19:52:19 by nkalkoul         ###   ########.fr       */
+/*   Updated: 2024/09/21 14:58:01 by nkalkoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,6 @@ long	ft_atoi(const char *s1)
 	{
 		nbr = 10 * nbr + (s1[i] - 48);
 		i++;
-		if (ft_isdigit(s1[i]) == 1);
-			return ()
 	}
 	return (nbr * sign);
 }
