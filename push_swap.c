@@ -6,7 +6,7 @@
 /*   By: nkalkoul <nkalkoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/08 13:59:38 by nkalkoul          #+#    #+#             */
-/*   Updated: 2024/09/21 16:14:36 by nkalkoul         ###   ########.fr       */
+/*   Updated: 2024/09/24 22:57:51 by nkalkoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,13 +37,14 @@ int	main(int ac, char **av)
 	if (ac == 2)
 	{
 		new = ft_split(av[1], ' ');
-		ac = ft_strdlen(new);
+		if (!new[1])
+			return (free(new), write(1, "error", 5));
+		ac = ft_strdlen(new) + 1;
 	}
 	else
-		new = av + 1;
+		new = &av[1];
 	if (ft_check(new) == 1)
 		return (write(1, "error", 5));
-	
 	tab = ft_create_tabs(ac - 1, new);
 	a = NULL;
 	a = ft_create_pile(a, tab, ac - 1);
@@ -52,5 +53,7 @@ int	main(int ac, char **av)
 	ft_swap(a);
 	ft_chouf(a);
 	ft_free_pile(a);
+	if (!av[2])
+		ft_freedouble(new);
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: nkalkoul <nkalkoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/08 14:03:05 by nkalkoul          #+#    #+#             */
-/*   Updated: 2024/09/21 16:29:15 by nkalkoul         ###   ########.fr       */
+/*   Updated: 2024/09/24 14:59:21 by nkalkoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,13 +32,6 @@ int	ft_check_cara(char *av)
 	{
 		if (av[i] != '-' && (av[i] < '0' || av[i] > '9'))
 			return (1);
-		if (av[i] == '-')
-		{
-			if (av[i - 1])
-				return (1);
-			if (av[i + 1] < '0' || av[i + 1] > '9')
-				return (1);
-		}
 		i++;
 	}
 	return (0);
@@ -48,7 +41,7 @@ size_t	ft_check(char **av)
 	int	i;
 	long nbr;
 
-	i = 1;
+	i = 0;
 
 	while (av[i])
 	{

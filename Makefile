@@ -1,4 +1,4 @@
-SRCS =	ft_check.c ft_create.c ft_push.c push_swap.c
+SRCS =	ft_check.c ft_create.c ft_push.c push_swap.c ft_utils.c
 CC =	cc #-Wall -Werror -Wextra
 DIRLIB = ./libft
 LIBFT = $(DIRLIB)/libft.a
@@ -9,7 +9,7 @@ OBJS =	$(SRCS:.c=.o)
 all : $(NAME)
 
 $(NAME): $(LIBFT) $(OBJS)
-	@$(CC) $(OBJS) $(LIBFT) -o $(NAME) 
+	@$(CC) $(OBJS) $(LIBFT) -o $(NAME) -g3
 	@echo "push_swap done !"
 #	cp $(LIBFT)/libft.a $(NAME)
 
