@@ -21,23 +21,22 @@ OBJBONUS = $(FBONUS:.c=.o)
 all : $(NAME) #EXEC
 
 $(NAME): $(OBJS)
-	ar -rsc $(NAME) $(OBJS)
+	@ar -rsc $(NAME) $(OBJS)
 
 #EXEC : main.c
 #	$(CC) main.c $(NAME)
 
 %.o : %.c
-	$(CC) -c $(SRCS) $(FBONUS)
-	echo compiling: $(SRCS) $(FBONUS)
+	@$(CC) -c $(SRCS) $(FBONUS)
+	@echo "compiling: $(SRCS) $(FBONUS)"
 
 bonus : $(OBJBONUS)
-	ar -rsc $(NAME) $(OBJBONUS)
+	@ar -rsc $(NAME) $(OBJBONUS)
 
 clean :
-	rm -f $(OBJS) $(OBJBONUS)
-
-
+	@rm -f $(OBJS) $(OBJBONUS)
+	@echo "cleaning: $(OBJS) $(OBJBONUS)"
 fclean : clean
-	rm -f $(NAME)
+	@rm -f $(NAME)
 
 re : fclean all

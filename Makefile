@@ -1,5 +1,5 @@
 SRCS =	ft_check.c ft_create.c ft_push.c push_swap.c
-CC =	cc -Wall -Werror -Wextra
+CC =	cc #-Wall -Werror -Wextra
 DIRLIB = ./libft
 LIBFT = $(DIRLIB)/libft.a
 INCLUDE = ./include
@@ -14,7 +14,7 @@ $(NAME): $(LIBFT) $(OBJS)
 #	cp $(LIBFT)/libft.a $(NAME)
 
 EXEC : push_swap.c
-	@$(CC) push_swap.c $(NAME) -g3
+	@$(CC) push_swap.c $(NAME) 
 
 $(LIBFT) :
 	@make -sC $(DIRLIB)

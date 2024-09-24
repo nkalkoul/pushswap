@@ -28,14 +28,23 @@ int	main(int ac, char **av)
 	int		i;
 	int		*tab;
 	s_pile	*a;
+	char	**new;
 
 	a = NULL;
 	i = 0;
 	if (ac < 2)
 		return (write(1, "error", 5));
-	if (ft_check(av) == 1)
+	if (ac == 2)
+	{
+		new = ft_split(av[1], ' ');
+		ac = ft_strdlen(new);
+	}
+	else
+		new = av + 1;
+	if (ft_check(new) == 1)
 		return (write(1, "error", 5));
-	tab = ft_create_tabs(ac - 1, av + 1);
+	
+	tab = ft_create_tabs(ac - 1, new);
 	a = NULL;
 	a = ft_create_pile(a, tab, ac - 1);
 	ft_chouf(a);
