@@ -28,14 +28,14 @@ $(NAME): $(OBJS)
 
 %.o : %.c
 	@$(CC) -c $(SRCS) $(FBONUS)
-	@echo "compiling: $(SRCS) $(FBONUS)"
+	@echo "compiling the libft"
 
 bonus : $(OBJBONUS)
 	@ar -rsc $(NAME) $(OBJBONUS)
 
 clean :
 	@rm -f $(OBJS) $(OBJBONUS)
-	@echo "cleaning: $(OBJS) $(OBJBONUS)"
+	@echo "cleaning the libft"
 fclean : clean
 	@rm -f $(NAME)
 
