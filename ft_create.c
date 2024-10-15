@@ -14,8 +14,8 @@
 
 int	*ft_create_tabs(int ac, char **av)
 {
-	int	*newt;
-	int i;
+	int		*newt;
+	int		i;
 
 	i = 0;
 	if (!av)
@@ -24,19 +24,18 @@ int	*ft_create_tabs(int ac, char **av)
 	if (!newt)
 		return (NULL);
 	while (av[i])
-		{
-			newt[i] = ft_atoi(av[i]);
-			i++;
-		}
+	{
+		newt[i] = ft_atoi(av[i]);
+		i++;
+	}
 	return (newt);
 }
 
-
-s_pile	*ft_addfront_pile(s_pile *stack, int x)
+t_pile	*ft_addfront_pile(t_pile *stack, int x)
 {
-	s_pile	*new;
+	t_pile	*new;
 
-	new = malloc(sizeof(s_pile));
+	new = malloc(sizeof(t_pile));
 	if (!new)
 		return (NULL);
 	new -> content = x;
@@ -44,23 +43,23 @@ s_pile	*ft_addfront_pile(s_pile *stack, int x)
 	return (new);
 }
 
-s_pile	*ft_create_pile(s_pile *stack, int *tab, int ac)
+t_pile	*ft_create_pile(t_pile *stack, int *tab, int ac)
 {
 	while (ac != 0)
 	{
 		stack = ft_addfront_pile(stack, tab[ac - 1]);
 		if (stack == NULL)
-			return(free(tab), ft_free_pile(stack), NULL);
+			return (free(tab), ft_free_pile(stack), NULL);
 		ac--;
 	}
 	return (free(tab), stack);
 }
 
-void	ft_free_pile(s_pile *pl)
+void	ft_free_pile(t_pile *pl)
 {
-	s_pile	*temp;
+	t_pile	*temp;
 
-	while(pl != NULL)
+	while (pl != NULL)
 	{
 		temp = pl -> next;
 		free(pl);

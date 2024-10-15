@@ -23,6 +23,7 @@ int	ft_check_double(char **av, int i, int nbr)
 	}
 	return (0);
 }
+
 int	ft_check_cara(char *av)
 {
 	int	i;
@@ -36,10 +37,11 @@ int	ft_check_cara(char *av)
 	}
 	return (0);
 }
+
 size_t	ft_check(char **av)
 {
-	int	i;
-	long nbr;
+	int		i;
+	long	nbr;
 
 	i = 0;
 

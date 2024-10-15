@@ -1,4 +1,4 @@
-SRCS =	ft_check.c ft_create.c ft_push.c ft_utils.c push_swap.c
+SRCS =	ft_check.c ft_create.c ft_push.c ft_utils.c push_swap.c ft_other.c ft_instruction.c ft_tri.c
 CC =	cc #-Wall -Werror -Wextra
 DIRLIB = ./libft
 LIBFT = $(DIRLIB)/libft.a

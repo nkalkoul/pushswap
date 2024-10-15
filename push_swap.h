@@ -20,25 +20,31 @@ typedef struct s_pile
 {
 	int				content;
 	struct s_pile	*next;
-}					s_pile;
+}					t_pile;
 
-typedef struct s_stack
-{
-	s_pile *head;
-	int size;
-} 				t_stack;
-
-void	ft_swap(s_pile *pl);
+void	ft_swap(t_pile *pl);
 size_t	ft_check(char **av);
 int		*ft_create_tabs(int ac, char **av);
-s_pile	*ft_create_pile(s_pile *stack, int *tab, int ac);
-void	ft_free_pile(s_pile *pl);
+t_pile	*ft_create_pile(t_pile *stack, int *tab, int ac);
+void	ft_free_pile(t_pile *pl);
 int		ft_strdlen(char **str);
 void	ft_freedouble(char **str);
-void	ft_push(s_pile **src, s_pile **dest);
-void	ft_rotate(s_pile **pl);
+void	ft_push(t_pile **src, t_pile **dest);
+void	ft_rotate(t_pile **pl);
+void	ft_revrotate(t_pile **pl);
+void	sa(t_pile **a);
+void	sb(t_pile **b);
+void	pa(t_pile **a, t_pile **b);
+void	pb(t_pile **a, t_pile **b);
+void	ra(t_pile **a);
+void	rb(t_pile **b);
+void	rra(t_pile **a);
+void	rrb(t_pile **b);
+void	ss(t_pile **a, t_pile **b);
+void	rr(t_pile **a, t_pile **b);
+void	rrr(t_pile **a, t_pile **b);
 
 //utilitaire
-void ft_chouf(s_pile *a);
+void	ft_chouf(t_pile *a);
 
 #endif

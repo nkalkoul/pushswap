@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-void	ft_swap(s_pile *pl)
+void	ft_swap(t_pile *pl)
 {
 	int	temp;
 
@@ -23,34 +23,55 @@ void	ft_swap(s_pile *pl)
 	pl -> next -> content = temp;
 }
 
-void	ft_push(s_pile **src, s_pile **dest)
+void	ft_push(t_pile **src, t_pile **dest)
 {
-	s_pile	*temp;
+	t_pile	*temp;
 
 	if (*src == NULL)
 		return ;
-	temp = *src; // récupère le premier élément de la pile source
-	*src = (*src)->next; // avance la pile source au prochain élément
-	temp->next = *dest; // place l'ancien premier élément de source en haut de dest
-	*dest = temp; // met à jour dest pour pointer vers le nouvel élément
-	
+	temp = *src;
+	*src = (*src)-> next;
+	temp -> next = *dest;
+	*dest = temp;
 }
 
-void	ft_rotate(s_pile **pl)
+void	ft_rotate(t_pile **pl)
 {
-	s_pile	*temp; 
-	s_pile 	*current;
-	s_pile *head;
-	
-	current = (*pl);
-	head = current->next;
-	temp = (*pl);
-	(*pl) = head;
-	while (current->next)
+	t_pile	*temp;
+	t_pile	*head;
+
+	if (!(*pl) || !(*pl)-> next)
+		return ;
+	temp = *pl;
+	head = *pl;
+	while (temp -> next != NULL)
+		temp = temp -> next;
+	*pl = (*pl)-> next;
+	temp -> next = head;
+	temp -> next ->next = NULL;
+}
+
+void	ft_revrotate(t_pile **pl)
+{
+	t_pile	*temp;
+	t_pile	*last;
+
+	if (!(*pl) || !(*pl)-> next)
+		return ;
+	temp = *pl;
+	last = *pl;
+	while (last -> next)
 	{
-		current = current->next;
+		temp = last;
+		last = last -> next;
 	}
-	temp->next = NULL;
-	current->next = temp;
-	
+	temp -> next = NULL;
+	last -> next = (*pl);
+	(*pl) = last;
+}
+
+void	sa(t_pile **a)
+{
+	ft_swap(a);
+	ft_putstr_fd("sa", 1);
 }
