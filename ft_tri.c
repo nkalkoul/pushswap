@@ -6,7 +6,7 @@
 /*   By: nkalkoul <nkalkoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 10:31:40 by nas91             #+#    #+#             */
-/*   Updated: 2024/10/24 00:22:55 by nkalkoul         ###   ########.fr       */
+/*   Updated: 2024/10/25 01:19:33 by nkalkoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,3 +51,56 @@ void	ft_doubletri(t_pile **a)
 		sa(a);
 }
 
+void	ft_start(t_pile **a, t_pile **b)
+{
+	int	i;
+
+	i = 0;
+	pb(&a, &b);
+	pb(&a, &b);
+	if ((*b)-> content < (*b) -> next -> content)
+		sb(b);
+	ft_costop(a, b);
+}
+
+int	ft_comparetarget(t_pile *tmp, t_pile *target)
+{
+	int	i;
+
+	i = 1;
+	while (tmp)
+	{
+		if (target -> content > tmp -> content)
+			break ;
+		tmp = tmp -> next;
+		i++;
+	}
+	return (i);
+}
+
+int	ft_costop(t_pile **b, t_pile **a)
+{
+	int posa;
+	int costop;
+	int	posb;
+	t_pile	*target;
+	t_pile	*tmp;
+	
+	posa = 1;
+	costop = 0;
+	target = *a;
+	tmp = *b;
+	costop = ft_comparetarget(tmp, target); + posa;
+	posb = ft_comparetarget(tmp, target);
+	while (target)
+	{
+		
+		target = target -> next;
+		posa++;
+		if (ft_comparetarget(tmp, target) + posa < costop)
+		{
+			costop = ft_comparetarget(tmp, target) + posa;
+			posb = ft_comparetarget(tmp, target);
+		}
+	}
+}

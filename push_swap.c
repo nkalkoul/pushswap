@@ -6,7 +6,7 @@
 /*   By: nkalkoul <nkalkoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/08 13:59:38 by nkalkoul          #+#    #+#             */
-/*   Updated: 2024/10/23 23:11:28 by nkalkoul         ###   ########.fr       */
+/*   Updated: 2024/10/24 23:05:33 by nkalkoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ void	ft_dothetri(int ac, char **new)
 		ft_tripletri(&a);
 	if (ac == 3)
 		ft_doubletri(&a);
-		ft_chouf(a);
+	ft_chouf(a);
 	ft_free_pile(a);
 	ft_free_pile(b);
 }
