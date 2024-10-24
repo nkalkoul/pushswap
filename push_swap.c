@@ -6,7 +6,7 @@
 /*   By: nkalkoul <nkalkoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/08 13:59:38 by nkalkoul          #+#    #+#             */
-/*   Updated: 2024/10/03 19:25:16 by nkalkoul         ###   ########.fr       */
+/*   Updated: 2024/10/23 23:11:28 by nkalkoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,53 +20,51 @@ void	ft_chouf(t_pile *a)
 		write(1, " ...", 3);
 		a = a -> next;
 	}
+	write(1, "\n",1);
 	return ;
 }
 
 int	main(int ac, char **av)
 {
-	int		i;
 	int		*tab;
-	t_pile	*a;
 	t_pile	*b;
 	char	**new;
 
-	a = NULL;
-	i = 0;
 	if (ac < 2)
-		return (write(1, "error", 5));
+		return (0);
 	if (ac == 2)
 	{
 		new = ft_split(av[1], ' ');
-		if (!new[1])
-			return (free(new), write(1, "error", 5));
+		if (!new[0])
+			return (free(new), 0);
 		ac = ft_strdlen(new) + 1;
 	}
 	else
 		new = &av[1];
 	if (ft_check(new) == 1)
-		return (write(1, "error", 5));
-	tab = ft_create_tabs(ac - 1, new);
-	a = NULL;
-	b = NULL;
-	a = ft_create_pile(a, tab, ac - 1);
-	write(1, "pile cree a = ", 15);
-	ft_chouf(a);
-	write(1, "\n", 1);
-	ft_swap(a);
-	write(1, "swap fais, a = ", 16);
-	ft_chouf(a);
-	ft_push(&a, &b);
-	write(1, "\npush fais, a = ", 17);
-	ft_chouf(a);
-	write(1, "\n b = ", 5);
-	ft_chouf(b);
-	ft_revrotate(&a);
-	//write(1, "revrotate fais maintenant a=", 26);
-	//ft_chouf(a);
-	ft_free_pile(a);
-	ft_free_pile(b);
+		return (write(2, "Error", 5));
+	ft_dothetri(ac, new);
 	if (!av[2])
 		ft_freedouble(new);
 	return (0);
+}
+
+void	ft_dothetri(int ac, char **new)
+{
+	t_pile	*a;
+	t_pile	*b;
+	int		*tab;
+
+	a = NULL;
+	b = NULL;
+	tab = ft_create_tabs(ac - 1, new);
+	a = ft_create_pile(a, tab, ac - 1);
+	ft_chouf(a);
+	if (ac > 3)
+		ft_tripletri(&a);
+	if (ac == 3)
+		ft_doubletri(&a);
+		ft_chouf(a);
+	ft_free_pile(a);
+	ft_free_pile(b);
 }

@@ -6,7 +6,7 @@
 /*   By: nkalkoul <nkalkoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/08 13:17:16 by nkalkoul          #+#    #+#             */
-/*   Updated: 2024/10/03 19:28:37 by nkalkoul         ###   ########.fr       */
+/*   Updated: 2024/10/23 22:57:19 by nkalkoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,9 @@ void	rrb(t_pile **b);
 void	ss(t_pile **a, t_pile **b);
 void	rr(t_pile **a, t_pile **b);
 void	rrr(t_pile **a, t_pile **b);
+void	ft_tripletri(t_pile **a);
+void	ft_doubletri(t_pile **a);
+void	ft_dothetri(int ac, char **new);
 
 //utilitaire
 void	ft_chouf(t_pile *a);

@@ -6,7 +6,7 @@
 /*   By: nkalkoul <nkalkoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/17 13:17:34 by nkalkoul          #+#    #+#             */
-/*   Updated: 2024/10/03 19:41:09 by nkalkoul         ###   ########.fr       */
+/*   Updated: 2024/10/23 23:10:39 by nkalkoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,6 @@ void	ft_revrotate(t_pile **pl)
 
 void	sa(t_pile **a)
 {
-	ft_swap(a);
-	ft_putstr_fd("sa", 1);
+	ft_swap(*a);
+	ft_putstr_fd("sa\n", 1);
 }
