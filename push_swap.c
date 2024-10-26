@@ -24,9 +24,22 @@ void	ft_chouf(t_pile *a)
 	return ;
 }
 
+int	ft_if_is_order(int *tab, int size)
+{
+	int	i;
+
+	i = 0;
+	while (i < size - 1)
+	{
+		if (tab[i] > tab[i + 1])
+			return (1);
+		i++;
+	}
+	return (0);
+}
+
 int	main(int ac, char **av)
 {
-	int		*tab;
 	char	**new;
 
 	if (ac < 2)
@@ -57,6 +70,8 @@ void	ft_dothetri(int ac, char **new)
 	a = NULL;
 	b = NULL;
 	tab = ft_create_tabs(ac - 1, new);
+	if (ft_if_is_order(tab, ac - 1) == 0)
+		return (free(tab));
 	a = ft_create_pile(a, tab, ac - 1);
 	if (ac == 3)
 		ft_doubletri(&a);
