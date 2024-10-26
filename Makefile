@@ -1,5 +1,5 @@
-SRCS =	ft_check.c ft_create.c ft_push.c ft_utils.c push_swap.c ft_other.c ft_instruction.c ft_tri.c
-CC =	cc #-Wall -Werror -Wextra
+SRCS =	ft_check.c ft_create.c ft_push.c ft_utils.c push_swap.c ft_other.c ft_instruction.c ft_tri.c ft_utils_tri.c
+CC =	gcc -g #-Wall -Werror -Wextra
 DIRLIB = ./libft
 LIBFT = $(DIRLIB)/libft.a
 INCLUDE = ./include
@@ -9,7 +9,7 @@ OBJS =	$(SRCS:.c=.o)
 all : $(NAME)
 
 $(NAME): $(LIBFT) $(OBJS)
-	@$(CC) $(OBJS) $(LIBFT) -o $(NAME) -g3
+	@$(CC) $(OBJS) $(LIBFT) -o $(NAME) 
 	@echo "push_swap done !"
 
 $(LIBFT) :

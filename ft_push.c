@@ -75,3 +75,4 @@ void	sa(t_pile **a)
 	ft_swap(*a);
 	ft_putstr_fd("sa\n", 1);
 }
+

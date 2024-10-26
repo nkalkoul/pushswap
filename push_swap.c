@@ -20,14 +20,13 @@ void	ft_chouf(t_pile *a)
 		write(1, " ...", 3);
 		a = a -> next;
 	}
-	write(1, "\n",1);
+	write (1, "\n", 1);
 	return ;
 }
 
 int	main(int ac, char **av)
 {
 	int		*tab;
-	t_pile	*b;
 	char	**new;
 
 	if (ac < 2)
@@ -59,12 +58,11 @@ void	ft_dothetri(int ac, char **new)
 	b = NULL;
 	tab = ft_create_tabs(ac - 1, new);
 	a = ft_create_pile(a, tab, ac - 1);
-	ft_chouf(a);
-	if (ac > 3)
-		ft_tripletri(&a);
 	if (ac == 3)
 		ft_doubletri(&a);
-	ft_chouf(a);
+	else
+		ft_start(&a, &b);
 	ft_free_pile(a);
-	ft_free_pile(b);
+	if (b)
+		ft_free_pile(b);
 }

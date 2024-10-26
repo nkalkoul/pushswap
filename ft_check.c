@@ -19,7 +19,7 @@ int	ft_check_double(char **av, int i, int nbr)
 	{
 		if (nbr == ft_atoi(av[i]))
 			return (1);
-		i++;	
+		i++;
 	}
 	return (0);
 }
@@ -35,7 +35,7 @@ int	ft_check_cara(char *av)
 		{
 			if (av[i + 1] && ft_isdigit(av[i + 1]) == 0)
 				return (1);
-		}	
+		}
 		if (av[i] != '-' && av[i] != '+' && (av[i] < '0' || av[i] > '9'))
 			return (1);
 		i++;
@@ -49,7 +49,6 @@ size_t	ft_check(char **av)
 	long	nbr;
 
 	i = 0;
-
 	while (av[i])
 	{
 		if (av[i][0] == 0)
