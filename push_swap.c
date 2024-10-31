@@ -6,7 +6,7 @@
 /*   By: nkalkoul <nkalkoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/08 13:59:38 by nkalkoul          #+#    #+#             */
-/*   Updated: 2024/10/24 23:05:33 by nkalkoul         ###   ########.fr       */
+/*   Updated: 2024/10/31 21:06:33 by nkalkoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,10 @@ int	main(int ac, char **av)
 	else
 		new = &av[1];
 	if (ft_check(new) == 1)
-		return (write(2, "Error", 5));
+	{	if (!av[2])
+			ft_freedouble(new);
+		return (write(2, "Error\n", 6));
+	}
 	ft_dothetri(ac, new);
 	if (!av[2])
 		ft_freedouble(new);

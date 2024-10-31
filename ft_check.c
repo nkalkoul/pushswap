@@ -6,7 +6,7 @@
 /*   By: nkalkoul <nkalkoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/08 14:03:05 by nkalkoul          #+#    #+#             */
-/*   Updated: 2024/10/21 22:03:34 by nkalkoul         ###   ########.fr       */
+/*   Updated: 2024/10/26 17:51:00 by nkalkoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int	ft_check_cara(char *av)
 	{
 		if (av[i] == '-' || av[i] == '+')
 		{
-			if (av[i + 1] && ft_isdigit(av[i + 1]) == 0)
+			if (av[i + 1] == '\0' || ft_isdigit(av[i + 1]) == 0)
 				return (1);
 		}
 		if (av[i] != '-' && av[i] != '+' && (av[i] < '0' || av[i] > '9'))
